@@ -1,0 +1,11 @@
+proj: proj (Cartographic Projections Library)
+proj:
+proj: PROJ.4 is a library for performing conversions between cartographic
+proj: projections.  The library is based on the work of Gerald Evenden at
+proj: the USGS, but is now an OSGeo project maintained by Frank Warmerdam.
+proj: The library also ships with executables for performing these
+proj: transformations from the command line.
+proj:
+proj:
+proj:
+proj: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
