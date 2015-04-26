@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
-# $Id: proj.SlackBuild,v 1.1 2015/04/26 07:49:35 gsotirov Exp $
+# $Id: proj.SlackBuild,v 1.2 2015/04/26 08:03:34 gsotirov Exp $
 #
 
 . ../../slack-package.conf
@@ -74,6 +74,7 @@ make DESTDIR=$PKG install || exit 7
 
 # Prepare
 ( cd $PKG; strip_bin; strip_lib )
+gzip_man $PKG
 ( cd $SRC; create_docs $PKG $NAME-$VERSION )
 
 mkdir -p $PKG/install
