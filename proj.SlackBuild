@@ -17,13 +17,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
-# $Id: proj.SlackBuild,v 1.2 2015/04/26 08:03:34 gsotirov Exp $
+# $Id: proj.SlackBuild,v 1.3 2015/04/29 20:26:59 gsotirov Exp $
 #
 
 . ../../slack-package.conf
 
 NAME=proj
-VERSION=4.8.0
+VERSION=4.9.1
 BUILD=${BUILD:-1}
 
 TMP=${TMP:-/tmp}
@@ -53,9 +53,6 @@ tar -xvf $CWD/$NAME-$VERSION.tar.?z* || exit 3
 cd $SRC
 fix_source
 
-# Apply patch(es)
-patch -b -z .orig -p1 < $CWD/$NAME-$VERSION.diff || exit 4
-
 # Configure
 CFLAGS=$SLKCFLAGS \
 CXXFLAGS=$SLKCFLAGS \
@@ -84,7 +81,6 @@ install -m 644 $CWD/slack-required $PKG/install/slack-required
 mkdir -p $PKG/usr/src/slackbuilds/$NAME-$VERSION
 install -m 644 $CWD/slack-desc          $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-desc
 install -m 644 $CWD/slack-required      $PKG/usr/src/slackbuilds/$NAME-$VERSION/slack-required
-install -m 644 $CWD/$NAME-$VERSION.diff $PKG/usr/src/slackbuilds/$NAME-$VERSION/$NAME-$VERSION.diff
 install -m 644 $CWD/$NAME.SlackBuild    $PKG/usr/src/slackbuilds/$NAME-$VERSION/$NAME.SlackBuild
 
 # Assemble
